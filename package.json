@@ -1,0 +1,14 @@
+{
+  "name": "douban-books",
+  "version": "1.0.0",
+  "description": "使用 puppeteer 抓取豆瓣书单",
+  "main": "index.js",
+  "author": "coderfee",
+  "license": "MIT",
+  "dependencies": {
+    "puppeteer-core": "^1.14.0"
+  },
+  "scripts": {
+    "start": "node index.js"
+  }
+}
