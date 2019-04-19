@@ -1,3 +1,3 @@
-# Douban books tool
+# Douban book tool
 
 使用 puppeteer 抓取豆瓣书单
