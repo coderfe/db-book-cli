@@ -6,6 +6,7 @@
   "author": "coderfee",
   "license": "MIT",
   "dependencies": {
+    "chalk": "^2.4.2",
     "puppeteer-core": "^1.14.0"
   },
   "scripts": {
