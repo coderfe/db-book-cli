@@ -25,37 +25,31 @@ const spinner = ora('服务正在启动').start();
   spinner.text = '登录成功...';
 
   spinner.text = '想读的书...';
-  await page.goto('https://book.douban.com/people/84902716/wish');
+  await page.goto('https://book.douban.com/mine?status=wish');
   const wish = await resolveBooks('wish');
   await page.waitFor(2000);
 
   spinner.text = '在读的书...';
-  await page.goto('https://book.douban.com/people/84902716/do');
+  await page.goto('https://book.douban.com/mine?status=do');
   const dos = await resolveBooks('do');
   await page.waitFor(2000);
 
   spinner.text = '读过的书...';
-  await page.goto('https://book.douban.com/people/84902716/collect');
+  await page.goto('https://book.douban.com/mine?status=collect');
   const collect = await resolveBooks('collect');
 
+  const books = [...wish, ...dos, ...collect];
   try {
     spinner.text = '正在保存到数据库';
-    await axios.post(config.batchService, [
-      ...wish,
-      ...dos,
-      ...collect
-    ]);
+    await axios.delete(config.batchService);
+    await axios.post(config.batchService, books);
     await browser.close();
   } catch (error) {
-    fs.writeFile(
-      'books.json',
-      JSON.stringify([...wish, ...dos, ...collect]),
-      async err => {
-        if (err) console.log(err);
-        spinner.text = '正在保存为 JSON';
-        await browser.close();
-      }
-    );
+    fs.writeFile('books.json', JSON.stringify(books), async err => {
+      if (err) console.log(err);
+      spinner.text = '正在保存为 JSON';
+      await browser.close();
+    });
   } finally {
     spinner.stopAndPersist({
       prefixText: '✅',
@@ -82,7 +76,19 @@ const spinner = ora('服务正在启动').start();
               .trim(),
             comment: item
               .getElementsByClassName('comment')[0]
-              .textContent.trim()
+              .textContent.trim(),
+            tags: item.getElementsByClassName('tags')[0]
+              ? item
+                  .getElementsByClassName('tags')[0]
+                  .textContent.replace(/\n/g, '')
+                  .split(': ')[1]
+                  .split(' ')
+              : [],
+            date: item.getElementsByClassName('date')[0]
+              ? item
+                  .getElementsByClassName('date')[0]
+                  .textContent.match(/\d{4}-\d{2}-\d{2}/)[0]
+              : ''
           };
         });
       },
