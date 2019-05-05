@@ -10,4 +10,4 @@
 yarn global add db-books
 &&
 npm i -g db-books
-``
+```
