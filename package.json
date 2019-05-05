@@ -1,10 +1,23 @@
 {
-  "name": "douban-books",
+  "name": "db-books",
   "version": "1.0.0",
   "description": "使用 puppeteer 抓取豆瓣书单",
-  "main": "index.js",
+  "bin": {
+    "db-books": "index.js"
+  },
   "author": "coderfee",
   "license": "MIT",
+  "repository": "coderfe/douban-book-tool",
+  "engines": {
+    "node": ">=8"
+  },
+  "keywords": [
+    "cli",
+    "cli-app",
+    "douban",
+    "douban books",
+    "books"
+  ],
   "dependencies": {
     "axios": "^0.18.0",
     "inquirer": "^6.3.1",

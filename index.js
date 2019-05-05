@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 const fs = require('fs');
 const os = require('os');
 const puppeteer = require('puppeteer-core');
@@ -48,8 +50,7 @@ const questions = [
 
   try {
     const browser = await puppeteer.launch({
-      executablePath,
-      headless: false
+      executablePath
     });
     const page = await browser.newPage();
     spinner.text = `正在登录：${username}`;
