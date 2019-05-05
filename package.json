@@ -1,6 +1,6 @@
 {
   "name": "db-books",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "使用 puppeteer 抓取豆瓣书单",
   "bin": {
     "db-books": "index.js"
