@@ -33,7 +33,7 @@ const questions = [
     });
     fs.writeFile('books.json', JSON.stringify(books), async err => {
       if (err) console.log(err);
-      console.log('Bingo: ' + data.length);
+      console.log('Bingo: ' + books.length);
       process.exit();
     });
   } catch (e) {
