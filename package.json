@@ -1,6 +1,6 @@
 {
   "name": "db-books-cli",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "使用 puppeteer 抓取豆瓣书单",
   "bin": {
     "db-books": "index.js"
