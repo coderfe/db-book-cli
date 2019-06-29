@@ -122,10 +122,10 @@ core-util-is@~1.0.0:
   resolved "https://registry.yarnpkg.com/core-util-is/-/core-util-is-1.0.2.tgz#b5fd54220aa2bc5ab57aab7140c940754503c1a7"
   integrity sha1-tf1UIgqivFq1eqtxQMlAdUUDwac=
 
-db-book@^1.0.2:
-  version "1.0.2"
-  resolved "https://registry.npm.taobao.org/db-book/download/db-book-1.0.2.tgz#28c526f0fa32d7419cae6e22efab0bda42749a0b"
-  integrity sha1-KMUm8Poy10Gcrm4i76sL2kJ0mgs=
+db-book@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.npmjs.org/db-book/-/db-book-1.0.3.tgz#b1d44229b459cae4ed983823bd19a33fb67acc0f"
+  integrity sha512-c1YU21lHxOQ14HKoJqnCO02ivtcYdiH/XQDwJx5IRcgjVqfwAjyU86C2xqAHV/1mBQZCVXsERc/Bki44pYHAyw==
   dependencies:
     ora "^3.4.0"
     puppeteer-core "^1.18.0"
