@@ -5,6 +5,9 @@ workflow "Publish To NPM" {
 
 action "GitHub Action for npm" {
   uses = "actions/npm@master"
-  secrets = ["NPM_TOKEN"]
-  runs = "publish"
+  args = "publish --access public"
+  env = {
+    NPM_REGISTRY_URL = "registry.npmjs.org"
+  }
+  secrets = ["NPM_AUTH_TOKEN"]
 }
