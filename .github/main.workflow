@@ -6,5 +6,5 @@ workflow "Publish To NPM" {
 action "GitHub Action for npm" {
   uses = "actions/npm@master"
   secrets = ["NPM_TOKEN"]
-  args = "publish"
+  runs = "publish"
 }
