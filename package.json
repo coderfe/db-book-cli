@@ -20,7 +20,7 @@
   ],
   "dependencies": {
     "db-book": "^1.0.3",
-    "inquirer": "^6.3.1"
+    "inquirer": "^6.5.1"
   },
   "scripts": {
     "start": "node index.js"

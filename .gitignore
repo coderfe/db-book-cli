@@ -1,3 +1,4 @@
 config.js
 books.json
 node_modules
+*.log
